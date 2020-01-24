@@ -143,4 +143,9 @@ include vendor/pixelstyle/config.mk
 # Customization
 include vendor/google/customization/config.mk
 
+# Charger mode images
+PRODUCT_PACKAGES += \
+    charger_res_images \
+    product_charger_res_images
+
 -include $(WORKSPACE)/build_env/image-auto-bits.mk
