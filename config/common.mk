@@ -140,10 +140,6 @@ include vendor/gapps/config.mk
 # Pixel Style
 include vendor/pixelstyle/config.mk
 
-# Clean up packages cache to avoid wrong strings and resources
-PRODUCT_COPY_FILES += \
-    vendor/aosp/prebuilt/common/bin/clean_cache.sh:system/bin/clean_cache.sh
-
 # Customization
 include vendor/google/customization/config.mk
 
