@@ -1,7 +1,7 @@
 # Set all versions
 CUSTOM_BUILD_TYPE ?= UNOFFICIAL
 
-PPUI_BASE_VERSION = 1.1
+PPUI_BASE_VERSION = 1.1.002
 PPUI_CODENAME := X 
 
 CUSTOM_DATE_YEAR := $(shell date -u +%Y)
