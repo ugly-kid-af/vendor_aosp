@@ -1,8 +1,8 @@
 # Set all versions
 CUSTOM_BUILD_TYPE ?= UNOFFICIAL
 
-PPUI_BASE_VERSION = 1.2.100
-PPUI_CODENAME := X 
+PPUI_BASE_VERSION = 1.3
+PPUI_CODENAME := DevilX
 
 CUSTOM_DATE_YEAR := $(shell date -u +%Y)
 CUSTOM_DATE_MONTH := $(shell date -u +%m)
@@ -24,6 +24,7 @@ ROM_FINGERPRINT := PixelPlusUI/$(PPUI_CODENAME)/$(CUSTOM_PLATFORM_VERSION)/$(TAR
 
 CUSTOM_PROPERTIES := \
     org.pixelplusui.version=$(PPUI_BASE_VERSION) \
+    org.pixelplusui.codename=$(PPUI_CODENAME) \
     org.pixelplusui.version.display=$(CUSTOM_VERSION) \
     org.pixelplusui.build_version=$(PPUI_BASE_VERSION) \
     org.pixelplusui.build_date=$(CUSTOM_BUILD_DATE) \
