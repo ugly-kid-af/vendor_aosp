@@ -128,6 +128,15 @@ PRODUCT_PACKAGES += \
     misc_writer_system \
     themed_bootanimation
 
+# Prebuilt Magisk
+    # Magisk Manager
+    PRODUCT_PACKAGES += \
+        MagiskManager
+
+    # Magisk ZIP
+    PRODUCT_COPY_FILES += \
+        vendor/aosp/prebuilt/zip/magisk.zip:system/addon.d/magisk.zip
+
 # NavigationBar Gestural Mode No Pill Overlays
 PRODUCT_PACKAGES += \
     NavBarGesturalNoPillOverlay \
