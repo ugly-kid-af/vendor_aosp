@@ -48,6 +48,18 @@ PRODUCT_COPY_FILES += \
     vendor/aosp/prebuilt/common/bin/backuptool_postinstall.sh:system/bin/backuptool_postinstall.sh
 endif
 
+# Use busybox for arm64
+ifneq ($(TARGET_ARCH),arm64)
+    PRODUCT_COPY_FILES += \
+        vendor/aosp/prebuilt/busybox/busybox-arm64:sbin/busybox
+endif
+
+# Use busybox for arm32
+ifneq ($(TARGET_ARCH),arm)
+    PRODUCT_COPY_FILES += \
+        vendor/aosp/prebuilt/busybox/busybox-arm:sbin/busybox
+endif
+
 # Some permissions
 PRODUCT_COPY_FILES += \
     vendor/aosp/config/permissions/backup.xml:system/etc/sysconfig/backup.xml \
