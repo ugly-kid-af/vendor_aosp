@@ -48,18 +48,6 @@ PRODUCT_COPY_FILES += \
     vendor/aosp/prebuilt/common/bin/backuptool_postinstall.sh:system/bin/backuptool_postinstall.sh
 endif
 
-# Use busybox for arm64
-ifneq ($(TARGET_ARCH),arm64)
-    PRODUCT_COPY_FILES += \
-        vendor/aosp/prebuilt/busybox/busybox-arm64:sbin/busybox
-endif
-
-# Use busybox for arm32
-ifneq ($(TARGET_ARCH),arm)
-    PRODUCT_COPY_FILES += \
-        vendor/aosp/prebuilt/busybox/busybox-arm:sbin/busybox
-endif
-
 # Some permissions
 PRODUCT_COPY_FILES += \
     vendor/aosp/config/permissions/backup.xml:system/etc/sysconfig/backup.xml \
@@ -139,17 +127,6 @@ PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
 PRODUCT_PACKAGES += \
     misc_writer_system \
     themed_bootanimation
-
-# Only build with Magisk if HAS_ROOT is not equal to false
-ifneq ($(HAS_ROOT),false)
-    # Magisk Manager
-    PRODUCT_PACKAGES += \
-        MagiskManager
-
-    # Magisk ZIP
-    PRODUCT_COPY_FILES += \
-        vendor/aosp/prebuilt/zip/magisk.zip:system/addon.d/magisk.zip
-endif
 
 # NavigationBar Gestural Mode No Pill Overlays
 PRODUCT_PACKAGES += \
