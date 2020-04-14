@@ -128,7 +128,8 @@ PRODUCT_PACKAGES += \
     misc_writer_system \
     themed_bootanimation
 
-# Prebuilt Magisk
+# Only build with Magisk if HAS_ROOT is not equal to false
+ifneq ($(HAS_ROOT),false)
     # Magisk Manager
     PRODUCT_PACKAGES += \
         MagiskManager
@@ -136,6 +137,7 @@ PRODUCT_PACKAGES += \
     # Magisk ZIP
     PRODUCT_COPY_FILES += \
         vendor/aosp/prebuilt/zip/magisk.zip:system/addon.d/magisk.zip
+endif
 
 # NavigationBar Gestural Mode No Pill Overlays
 PRODUCT_PACKAGES += \
