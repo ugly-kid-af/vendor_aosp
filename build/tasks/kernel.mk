@@ -31,6 +31,11 @@
 #
 #   TARGET_KERNEL_CLANG_VERSION        = Clang prebuilts version, optional, defaults to clang-stable
 #
+#	TARGET_KERNEL_GCC_WITH_RELR		   = Build with RELR Relocation while on GCC. This requires clang-11 or llvm.
+#											Defaults to false.
+#
+#	TARGET_KERNEL_GCC_WITH_LLD		   = Use LLD Linker with GCC. Defaults to false
+#
 #   TARGET_KERNEL_CLANG_PATH           = Clang prebuilts path, optional
 #
 #   BOARD_KERNEL_IMAGE_NAME            = Built image name
@@ -194,6 +199,17 @@ PATH_OVERRIDE += PATH=$(KERNEL_TOOLCHAIN_PATH_gcc)/bin:$$PATH
 
 # System tools are no longer allowed on 10+
 PATH_OVERRIDE += $(TOOLS_PATH_OVERRIDE)
+
+# Append for RELR to work
+ifeq ($(TARGET_KERNEL_GCC_WITH_RELR),true)
+    KERNEL_CROSS_COMPILE += NM=llvm-nm
+    KERNEL_CROSS_COMPILE += OBJCOPY=llvm-objcopy
+endif
+
+# Append for LLD Linker with GCC
+ifeq ($(TARGET_KERNEL_GCC_WITH_LLD),y)
+    KERNEL_CROSS_COMPILE += LD=ld.lld
+endif
 
 KERNEL_ADDITIONAL_CONFIG_OUT := $(KERNEL_OUT)/.additional_config
 
