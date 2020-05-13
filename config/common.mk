@@ -143,6 +143,9 @@ PRODUCT_PACKAGES += \
     NavBarGesturalWideBackNoPillOverlay \
     NavBarGesturalExtraWideBackNoPillOverlay
 
+# Inherit from bootanimation config
+$(call inherit-product, vendor/aosp/config/bootanimation.mk)
+
 # Long Screenshot
 PRODUCT_PACKAGES += \
     StitchImage
