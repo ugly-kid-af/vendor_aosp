@@ -15,6 +15,6 @@
 
 # Bootanimation
 ifeq ($(TARGET_BOOT_ANIMATION_RES),1080)
-     PRODUCT_COPY_FILES += vendor/aosp/bootanimation/bootanimation-light_1080.zip:$(TARGET_COPY_OUT_PRODUCT)/media/bootanimation.zip
-     PRODUCT_COPY_FILES += vendor/aosp/bootanimation/bootanimation-dark_1080.zip:$(TARGET_COPY_OUT_PRODUCT)/media/bootanimation-dark.zip
+     PRODUCT_COPY_FILES += vendor/aosp/bootanimation/bootanimation-light_1080.zip:$(TARGET_COPY_OUT_PRODUCT)/media/bootanimation-dark.zip
+     PRODUCT_COPY_FILES += vendor/aosp/bootanimation/bootanimation-dark_1080.zip:$(TARGET_COPY_OUT_PRODUCT)/media/bootanimation.zip
 endif
