@@ -1,8 +1,8 @@
 # Set all versions
 CUSTOM_BUILD_TYPE ?= UNOFFICIAL
 
-PPUI_BASE_VERSION = 1.3
-PPUI_CODENAME := DevilX
+PPUI_BASE_VERSION = 1.4
+PPUI_CODENAME := FireZ
 
 CUSTOM_DATE_YEAR := $(shell date -u +%Y)
 CUSTOM_DATE_MONTH := $(shell date -u +%m)
